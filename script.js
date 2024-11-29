@@ -80,7 +80,12 @@ function takeCommand(message) {
   }else if (message.includes("linkedin")) {
     speak("opening linkdin...");
     window.open("https://www.linkedin.com/in/banta-singh-04366424b", "_blank"); 
+   
     
+  }else if (message.includes("whatsapp")) {
+    speak("opening whatsapp...");
+    window.open("https://web.whatsapp.com/", "_blank"); 
+  
   }else if (message.includes("github")) {
     speak("opening github...");
     window.open("https://github.com/SinghBanta", "_blank");
