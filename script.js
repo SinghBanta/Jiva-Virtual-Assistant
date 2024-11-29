@@ -48,40 +48,36 @@ function takeCommand(message) {
   voice.style.display = "none";
   if (
     message.includes("hello") ||
-    message.includes("hi") ||
     message.includes("namaste")||
     message.includes("sat shri akaal")
   ) {
     speak("hello sir,what can i do for you?");
   } else if (message.includes("who are you")) {
     speak("i am virtual assistant, created by Banta Sir ?");
-  } else if (message.includes("open youtube")) {
+  } else if (message.includes("youtube")) {
     speak("opening youtube...");
     window.open("https://youtube.com", "_blank");
-  } else if (message.includes("open google")) {
+  } else if (message.includes("google")) {
     speak("opening google...");
     window.open("https://google.com", "_blank");
-  } else if (message.includes("open instagram")) {
+  } else if (message.includes("instagram")) {
     speak("opening instagram...");
     window.open("https://instagram.com", "_blank");
-  } else if (message.includes("open todo app")) {
+  } else if (message.includes("todo app")) {
     speak("opening achiever...");
     window.open("https://to-do-app-banta.vercel.app", "_blank");
-  }else if (message.includes("open todo app")) {
-    speak("opening achiever...");
-    window.open("https://to-do-app-banta.vercel.app", "_blank");
-  }else if (message.includes("open simon says game")) {
+  }else if (message.includes("simon says")) {
     speak("opening simon says game...");
     window.open("https://singhbanta.github.io/Simon-Says-Game", "_blank"); 
-  }else if (message.includes("open my portfolio")) {
+  }else if (message.includes("portfolio")) {
     speak("opening portfolio...");
     window.open("https://bantasingh.vercel.app", "_blank");
 
-  }else if (message.includes("open weather app")) {
+  }else if (message.includes("weather app")) {
     speak("opening weather app...");
     window.open("https://weather-app-ajo.vercel.app", "_blank"); 
   
-  }else if (message.includes("open my linkedin")) {
+  }else if (message.includes("linkedin")) {
     speak("opening linkdin...");
     window.open("https://www.linkedin.com/in/banta-singh-04366424b", "_blank"); 
     
