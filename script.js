@@ -102,6 +102,45 @@ function takeCommand(message) {
   }
 }
 
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("/service-worker.js")
+    .then((registration) => {
+      console.log("Service Worker registered with scope:", registration.scope);
+    })
+    .catch((error) => {
+      console.log("Service Worker registration failed:", error);
+    });
+}
+
+let deferredPrompt;
+
+window.addEventListener("beforeinstallprompt", (event) => {
+  // Prevent the mini-infobar from appearing on mobile
+  event.preventDefault();
+  // Save the event so it can be triggered later
+  deferredPrompt = event;
+  // Show the install button
+  const installBtn = document.getElementById("install-btn");
+  installBtn.style.display = "block";
+
+  installBtn.addEventListener("click", () => {
+    // Hide the install button
+    installBtn.style.display = "none";
+    // Show the install prompt
+    deferredPrompt.prompt();
+    // Wait for the user to respond to the prompt
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === "accepted") {
+        console.log("User accepted the install prompt");
+      } else {
+        console.log("User dismissed the install prompt");
+      }
+      deferredPrompt = null;
+    });
+  });
+});
+
 // let time=document.querySelector("#time");
 // function timer(){
 
