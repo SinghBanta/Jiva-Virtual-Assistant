@@ -123,6 +123,10 @@ function takeCommand(message) {
     speak("playing difference by amrit maan...");
     window.open("https://www.youtube.com/watch?v=vg0ZfeszGrU", "_blank"); 
   
+  }else if (message.includes("what we do")) {
+    speak("playing what we do...");
+    window.open("https://www.youtube.com/watch?v=IdML5RUzx34", "_blank");
+  
   }else {
     let finalText =
       "this is what i found on internet regarding" +
@@ -178,33 +182,33 @@ window.addEventListener("beforeinstallprompt", (event) => {
 
 
 //Showing current time
-// let time=document.querySelector("#time");
-// function timer(){
+let time=document.querySelector("#time");
+function timer(){
 
-// let now=new Date()
-// var currentOffset = now.getTimezoneOffset();
+let now=new Date()
+var currentOffset = now.getTimezoneOffset();
 
-// var ISTOffset = 330;   // IST offset UTC +5:30
+var ISTOffset = 330;   // IST offset UTC +5:30
 
-// var ISTTime = new Date(now.getTime() + (ISTOffset + currentOffset)*60000);
+var ISTTime = new Date(now.getTime() + (ISTOffset + currentOffset)*60000);
 
-// let hours=ISTTime.getHours();
-// let minutes=ISTTime.getMinutes();
-// let seconds=ISTTime.getSeconds();
+let hours=ISTTime.getHours();
+let minutes=ISTTime.getMinutes();
+let seconds=ISTTime.getSeconds();
 
-// let ampm;
-// if(hours<12 || hours==24){
-// ampm="am"
-// }else
-// ampm="pm";
+let ampm;
+if(hours<12 || hours==24){
+ampm="AM"
+}else
+ampm="PM";
 
-// time.innerText=(`${hours%12}:${minutes}:${seconds} ${ampm}`);
+time.innerText=(`${hours%12}:${minutes}:${seconds} ${ampm}`);
 
-// }
+}
 
-// window.addEventListener("load",()=>{
-//     setInterval(()=>{
-//         timer()
-//     },1000)
+window.addEventListener("load",()=>{
+    setInterval(()=>{
+        timer()
+    },1000)
 
-// })
+})
