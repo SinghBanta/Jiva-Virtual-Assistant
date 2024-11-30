@@ -34,7 +34,7 @@ recognition.onresult = (event) => {
   content.innerText = transcript;
   takeCommand(transcript.toLowerCase());
 
-  console.log(event);
+  // console.log(event);
 };
 
 btn.addEventListener("click", () => {
@@ -48,7 +48,7 @@ function takeCommand(message) {
   voice.style.display = "none";
   if (
     message.includes("hello") ||
-    message.includes("namaste")||
+    message.includes("namaste") ||
     message.includes("sat shri akaal")
   ) {
     speak("hello sir,what can i do for you?");
@@ -66,30 +66,48 @@ function takeCommand(message) {
   } else if (message.includes("todo app")) {
     speak("opening achiever...");
     window.open("https://to-do-app-banta.vercel.app", "_blank");
-  }else if (message.includes("simon says")) {
+  } else if (message.includes("simon says")) {
     speak("opening simon says game...");
-    window.open("https://singhbanta.github.io/Simon-Says-Game", "_blank"); 
-  }else if (message.includes("portfolio")) {
+    window.open("https://singhbanta.github.io/Simon-Says-Game", "_blank");
+  } else if (message.includes("portfolio")) {
     speak("opening portfolio...");
     window.open("https://bantasingh.vercel.app", "_blank");
-
-  }else if (message.includes("weather app")) {
+  } else if (message.includes("weather app")) {
     speak("opening weather app...");
-    window.open("https://weather-app-ajo.vercel.app", "_blank"); 
-  
-  }else if (message.includes("linkedin")) {
+    window.open("https://weather-app-ajo.vercel.app", "_blank");
+  } else if (message.includes("linkedin")) {
     speak("opening linkdin...");
-    window.open("https://www.linkedin.com/in/banta-singh-04366424b", "_blank"); 
-   
-    
-  }else if (message.includes("whatsapp")) {
+    window.open("https://www.linkedin.com/in/banta-singh-04366424b", "_blank");
+  } else if (message.includes("whatsapp")) {
     speak("opening whatsapp...");
-    window.open("https://web.whatsapp.com/", "_blank"); 
-  
-  }else if (message.includes("github")) {
+    window.open("https://web.whatsapp.com/", "_blank");
+  } else if (message.includes("github")) {
     speak("opening github...");
     window.open("https://github.com/SinghBanta", "_blank");
-  }else {
+  } else if (message.includes("achiever")) {
+    speak("opening achiever...");
+    window.open("https://to-do-app-banta.vercel.app/", "_blank");
+
+    //songs
+  } else if (message.includes("brown rang")) {
+    speak("playing brown rang...");
+    window.open("https://www.youtube.com/watch?v=eizmCZv3aKI", "_blank");
+  } else if (message.includes("honey sing")) {
+    speak("playing honey singh...");
+    window.open("https://www.youtube.com/watch?v=pz6Az06g9-I", "_blank");
+  } else if (message.includes("karan aujla")) {
+    speak("playing karan aujla...");
+    window.open("https://www.youtube.com/watch?v=CgVEDWgEXU0", "_blank");
+  } else if (message.includes("begum")) {
+    speak("playing begum by mankirat aulakh...");
+    window.open("https://www.youtube.com/watch?v=9-fIftd_ISQ", "_blank");
+  } else if (message.includes("khauf")) {
+    speak("playing khauf by mankirat aulakh...");
+    window.open("https://www.youtube.com/watch?v=Zv5zPUtw3Oc", "_blank");
+  } else if (message.includes("khan bhaini")) {
+    speak("playing khain bhaini...");
+    window.open("https://www.youtube.com/watch?v=9Llyump7J0Y", "_blank");
+  } else {
     let finalText =
       "this is what i found on internet regarding" +
         message.replace("jiva", "") || message.replace("jeeva", "");
@@ -142,6 +160,8 @@ window.addEventListener("beforeinstallprompt", (event) => {
   });
 });
 
+
+//Showing current time
 // let time=document.querySelector("#time");
 // function timer(){
 
