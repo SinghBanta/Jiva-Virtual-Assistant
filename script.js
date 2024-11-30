@@ -107,7 +107,23 @@ function takeCommand(message) {
   } else if (message.includes("khan bhaini")) {
     speak("playing khain bhaini...");
     window.open("https://www.youtube.com/watch?v=9Llyump7J0Y", "_blank");
-  } else {
+  }else if (message.includes("trump")) {
+    speak("playing trump by cheema y...");
+    window.open("https://www.youtube.com/watch?v=nSstUsPpRUk", "_blank"); 
+  
+  }else if (message.includes("hair")) {
+    speak("playing hair by karan aujla...");
+    window.open("https://www.youtube.com/watch?v=z1VxjMem2hc", "_blank"); 
+  
+  }else if (message.includes("on top")) {
+    speak("playing on top by Karan aujla...");
+    window.open("https://www.youtube.com/watch?v=aFWDOFg7X2A", "_blank"); 
+  
+  }else if (message.includes("difference")) {
+    speak("playing difference by amrit maan...");
+    window.open("https://www.youtube.com/watch?v=vg0ZfeszGrU", "_blank"); 
+  
+  }else {
     let finalText =
       "this is what i found on internet regarding" +
         message.replace("jiva", "") || message.replace("jeeva", "");
