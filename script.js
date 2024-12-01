@@ -84,7 +84,12 @@ function takeCommand(message) {
   } else if (message.includes("github")) {
     speak("opening github...");
     window.open("https://github.com/SinghBanta", "_blank");
-  } else if (message.includes("achiever")) {
+
+  }  else if (message.includes("image generator")) {
+    speak("opening image generator...");
+    window.open("https://image-generator-banta.vercel.app/");
+  
+  }else if (message.includes("achiever")) {
     speak("opening achiever...");
     window.open("https://to-do-app-banta.vercel.app/", "_blank");
 
@@ -126,6 +131,10 @@ function takeCommand(message) {
   }else if (message.includes("what we do")) {
     speak("playing what we do...");
     window.open("https://www.youtube.com/watch?v=IdML5RUzx34", "_blank");
+  
+  }else if (message.includes("karan randhawa")) {
+    speak("playing shehar pattiya...");
+    window.open("https://www.youtube.com/watch?v=R1NUCucJkrc", "_blank");
   
   }else {
     let finalText =
