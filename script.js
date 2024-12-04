@@ -54,7 +54,18 @@ function takeCommand(message) {
     speak("hello sir,what can i do for you?");
   } else if (message.includes("who are you")) {
     speak("i am virtual assistant, created by Banta Sir ?");
-  } else if (message.includes("youtube")) {
+  }else if (message.includes("ki hal hai tere")) {
+    speak("kaint a sir tusi sunao tuhade ki haal ne...");
+  
+  }else if (message.includes("ki")) {
+    speak("bas roti pani sahi chali janda tuhade karke...");
+    
+  
+  }else if (message.includes("sukhi sandhi")) {
+    speak("ha sir bas tuhadi kirpa bni rhe...");
+    
+  
+  }else if (message.includes("youtube")) {
     speak("opening youtube...");
     window.open("https://youtube.com", "_blank");
   } else if (message.includes("google")) {
@@ -92,6 +103,10 @@ function takeCommand(message) {
   }else if (message.includes("achiever")) {
     speak("opening achiever...");
     window.open("https://to-do-app-banta.vercel.app/", "_blank");
+  
+  }else if (message.includes("fit club")) {
+    speak("opening A I powered fitness website...");
+    window.open("https://fit-club-banta.vercel.app/", "_blank");
 
     //songs
   } else if (message.includes("brown rang")) {
