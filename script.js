@@ -84,6 +84,7 @@ function takeCommand(message) {
   } else if (message.includes("bye")) {
     speak("goodbye sir, have a nice day");
     window.close();
+    
   } else if (message.includes("youtube")) {
     speak("opening youtube...");
     window.open("https://youtube.com", "_blank");
