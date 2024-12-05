@@ -54,18 +54,37 @@ function takeCommand(message) {
     speak("hello sir,what can i do for you?");
   } else if (message.includes("who are you")) {
     speak("i am virtual assistant, created by Banta Sir ?");
-  }else if (message.includes("ki hal hai tere")) {
+  } else if (message.includes("ki hal hai tere")) {
     speak("kaint a sir tusi sunao tuhade ki haal ne...");
-  
-  }else if (message.includes("ki")) {
+  } else if (message.includes("ki")) {
     speak("bas roti pani sahi chali janda tuhade karke...");
-    
-  
-  }else if (message.includes("sukhi sandhi")) {
+  } else if (message.includes("sukhi sandhi")) {
     speak("ha sir bas tuhadi kirpa bni rhe...");
-    
-  
-  }else if (message.includes("youtube")) {
+  } else if (message.includes("good morning")) {
+    let hours = new Date().getHours();
+    if (hours >= 0 && hours < 12) {
+      speak("Good Morning Sir");
+    } else {
+      speak("It's not morning right now, Sir");
+    }
+  } else if (message.includes("good afternoon")) {
+    let hours = new Date().getHours();
+    if (hours >= 12 && hours < 16) {
+      speak("Good Afternoon Sir");
+    } else {
+      speak("It's not afternoon right now, Sir");
+    }
+  } else if (message.includes("good night")) {
+    let hours = new Date().getHours();
+    if (hours >= 20 || hours < 6) {
+      speak("Good Night Sir");
+    } else {
+      speak("It's not night right now, Sir");
+    }
+  } else if (message.includes("bye")) {
+    speak("goodbye sir, have a nice day");
+    window.close();
+  } else if (message.includes("youtube")) {
     speak("opening youtube...");
     window.open("https://youtube.com", "_blank");
   } else if (message.includes("google")) {
@@ -95,14 +114,19 @@ function takeCommand(message) {
   } else if (message.includes("github")) {
     speak("opening github...");
     window.open("https://github.com/SinghBanta", "_blank");
-
-  }  else if (message.includes("image generator")) {
+  } else if (message.includes("image generator")) {
     speak("opening image generator...");
     window.open("https://image-generator-banta.vercel.app/");
-  
-  }else if (message.includes("achiever")) {
+  } else if (message.includes("achiever")) {
     speak("opening achiever...");
-    window.open("https://to-do-app-banta.vercel.app/", "_blank");
+    window.open("https://to-do-app-banta.vercel.app/", "_blank", "_self");
+    } else if (message.includes("close fit club")) {
+    speak("closing A I powered fitness website...");
+    let fitClubWindow = window.open("https://fit-club-banta.vercel.app/", "_blank","_self");
+    fitClubWindow.close();
+    } else if (message.includes("fit club")) {
+    speak("opening A I powered fitness website...");
+    window.open("https://fit-club-banta.vercel.app/", "_blank","_self");
   
   }else if (message.includes("fit club")) {
     speak("opening A I powered fitness website...");
@@ -127,29 +151,26 @@ function takeCommand(message) {
   } else if (message.includes("khan bhaini")) {
     speak("playing khain bhaini...");
     window.open("https://www.youtube.com/watch?v=9Llyump7J0Y", "_blank");
-  }else if (message.includes("trump")) {
+  } else if (message.includes("trump")) {
     speak("playing trump by cheema y...");
-    window.open("https://www.youtube.com/watch?v=nSstUsPpRUk", "_blank"); 
-  
-  }else if (message.includes("hair")) {
+    window.open("https://www.youtube.com/watch?v=nSstUsPpRUk", "_blank");
+  } else if (message.includes("hair")) {
     speak("playing hair by karan aujla...");
-    window.open("https://www.youtube.com/watch?v=z1VxjMem2hc", "_blank"); 
-  
-  }else if (message.includes("on top")) {
+    window.open("https://www.youtube.com/watch?v=z1VxjMem2hc", "_blank");
+  } else if (message.includes("on top")) {
     speak("playing on top by Karan aujla...");
-    window.open("https://www.youtube.com/watch?v=aFWDOFg7X2A", "_blank"); 
-  
-  }else if (message.includes("difference")) {
+    window.open("https://www.youtube.com/watch?v=aFWDOFg7X2A", "_blank");
+  } else if (message.includes("difference")) {
     speak("playing difference by amrit maan...");
-    window.open("https://www.youtube.com/watch?v=vg0ZfeszGrU", "_blank"); 
-  
-  }else if (message.includes("what we do")) {
+    window.open("https://www.youtube.com/watch?v=vg0ZfeszGrU", "_blank");
+  } else if (message.includes("what we do")) {
     speak("playing what we do...");
     window.open("https://www.youtube.com/watch?v=IdML5RUzx34", "_blank");
-  
-  }else if (message.includes("karan randhawa")) {
+  } else if (message.includes("karan randhawa")) {
     speak("playing shehar pattiya...");
     window.open("https://www.youtube.com/watch?v=R1NUCucJkrc", "_blank");
+  
+ 
   
   }else {
     let finalText =
@@ -204,35 +225,30 @@ window.addEventListener("beforeinstallprompt", (event) => {
   });
 });
 
-
 //Showing current time
-let time=document.querySelector("#time");
-function timer(){
+let time = document.querySelector("#time");
+function timer() {
+  let now = new Date();
+  var currentOffset = now.getTimezoneOffset();
 
-let now=new Date()
-var currentOffset = now.getTimezoneOffset();
+  var ISTOffset = 330; // IST offset UTC +5:30
 
-var ISTOffset = 330;   // IST offset UTC +5:30
+  var ISTTime = new Date(now.getTime() + (ISTOffset + currentOffset) * 60000);
 
-var ISTTime = new Date(now.getTime() + (ISTOffset + currentOffset)*60000);
+  let hours = ISTTime.getHours();
+  let minutes = ISTTime.getMinutes();
+  let seconds = ISTTime.getSeconds();
 
-let hours=ISTTime.getHours();
-let minutes=ISTTime.getMinutes();
-let seconds=ISTTime.getSeconds();
+  let ampm;
+  if (hours < 12 || hours == 24) {
+    ampm = "AM";
+  } else ampm = "PM";
 
-let ampm;
-if(hours<12 || hours==24){
-ampm="AM"
-}else
-ampm="PM";
-
-time.innerText=(`${hours%12}:${minutes}:${seconds} ${ampm}`);
-
+  time.innerText = `${hours % 12}:${minutes}:${seconds} ${ampm}`;
 }
 
-window.addEventListener("load",()=>{
-    setInterval(()=>{
-        timer()
-    },1000)
-
-})
+window.addEventListener("load", () => {
+  setInterval(() => {
+    timer();
+  }, 1000);
+});
