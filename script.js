@@ -119,18 +119,11 @@ function takeCommand(message) {
     window.open("https://image-generator-banta.vercel.app/");
   } else if (message.includes("achiever")) {
     speak("opening achiever...");
-    window.open("https://to-do-app-banta.vercel.app/", "_blank", "_self");
-    } else if (message.includes("close fit club")) {
-    speak("closing A I powered fitness website...");
-    let fitClubWindow = window.open("https://fit-club-banta.vercel.app/", "_blank","_self");
-    fitClubWindow.close();
+  window.open("https://to-do-app-banta.vercel.app/", "_blank");
     } else if (message.includes("fit club")) {
     speak("opening A I powered fitness website...");
-    window.open("https://fit-club-banta.vercel.app/", "_blank","_self");
-  
-  }else if (message.includes("fit club")) {
-    speak("opening A I powered fitness website...");
-    window.open("https://fit-club-banta.vercel.app/", "_blank");
+  window.open("https://fit-club-banta.vercel.app/","_blank");
+
 
     //songs
   } else if (message.includes("brown rang")) {
